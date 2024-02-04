@@ -3,7 +3,7 @@ var trials = 0;
 var instructionboolean = true;
 navigator.mediaDevices.getUserMedia({
     audio: true,
-    video: true,
+    video: false,
   })
   .then(stream => {
       window.localStream = stream;
