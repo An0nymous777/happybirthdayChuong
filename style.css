@@ -247,6 +247,7 @@ body{
 .giftcontainer{
   position: absolute;
   bottom: 15vh;
+  display: none;
 }
 .giftcontainer::before{
   content: '';

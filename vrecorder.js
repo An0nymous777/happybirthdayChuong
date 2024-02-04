@@ -170,7 +170,9 @@ function startLetter() {
 
 function openGiftfunc() {
     var $wrapper = $('.wrapper');
+    var $giftcontainer = $(".giftcontainer");
     $wrapper.fadeOut();
+    $giftcontainer.fadeIn();
     console.log("buttonwork")
 }
 
