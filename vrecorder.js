@@ -1,5 +1,6 @@
 
 var trials = 0;
+var instructionboolean = true;
 navigator.mediaDevices.getUserMedia({
     audio: true,
     video: true,
@@ -24,12 +25,12 @@ navigator.mediaDevices.getUserMedia({
         console.log(Math.round(average));
         // colorPids(average);
         const square = document.querySelector('.square');
-        if(Math.round(average)>= 35 && trials ==0) {
+        if(Math.round(average)>= 40 && trials ==0) {
             playVideo2();
             setTimeout(playVideo1, 2000);
             trials ++;
             console.log(console)
-        } else if (Math.round(average)>= 40 && trials ==2) {
+        } else if (Math.round(average)>= 50 && trials ==2) {
             playVideo3();
             setTimeout(stopVoice, 5100);
             setTimeout(startLetter, 4500);
@@ -104,11 +105,12 @@ function startLetter() {
     var $card = $(".card"),
       $bgCard = $(".bgCard"),
       $icon = $(".icon"),
+      $openGift = $(".openGift"),
       cartPageBottomP = document.querySelector(".cart-page-bottom p"),
       cartPageBottomH4 = document.querySelector(".cart-page-bottom h4");
       let textTitle = "Gửi Chương!";
       let charArrTitle = textTitle.split('');
-  let text = "Happy birthday :)). Chúc mừng sinh nhật ban. Mong bạn càng ngày càng đẹp trai và học giỏi!"
+  let text = "Happy birthday :)). Chúc mừng sinh nhật bạn. Chúc bạn càng ngày càng đẹp trai và học giỏi!"
   let charArrContent = text.split('');
   var currentIndexTitle = 0;
   var currentIndexContent = 0;
@@ -141,7 +143,8 @@ function startLetter() {
                       }
                       else{
                           clearInterval(textIntervalContent)
-                      }
+                          $openGift.fadeIn();
+                        }
                   },50)
               }
           },50)
@@ -164,4 +167,24 @@ function startLetter() {
     });
   
   };
-  
+
+function openGiftfunc() {
+    var $wrapper = $('.wrapper');
+    $wrapper.fadeOut();
+    console.log("buttonwork")
+}
+
+
+function hideInstruction() {
+    instruction = document.querySelector('.instruction');
+    if(instructionboolean==false){
+        instruction.style.opacity = "1";
+        instructionboolean = true;
+    }
+    else{
+        instruction.style.opacity = "0";
+        instructionboolean = false;
+    }
+    
+}
+

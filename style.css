@@ -1,27 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
-.pids-wrapper{
-    width: 100%;
-}
-.pid{
-    width: calc(10% - 10px);
-    height: 10px;
-    display: inline-block;
-    margin: 5px;
-    position: absolute;
-    top:50%;
-    left: 50%
-}
-
-.square {
-    width: 500px;
-    height: 500px;
-    background-color: black;
-}
-
-.start_btn{
-    position: absolute;
-    bottom: 10px;
+body{
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #FFDEF3;
+  overflow: hidden;
+  font-family: sans-serif;
 }
 
 .wrapper {
@@ -159,9 +145,13 @@
 .cart-page-inside,
 .cart-page-bottom {
   background-color: var(--inside-card-color);
-  background-image: url('https://www.dropbox.com/s/8hw7guch8d151kg/pattern.png?raw=1');
+  background-image: url('pattern.jpg');
   border: 20px solid var(--inside-card-color);
   text-align: center;
+  align-items: center;
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
 }
 .cart-page-inside{
     display: flex;
@@ -194,16 +184,6 @@
     font-family: 'Dancing Script', cursive;
 }
 
-.merry-christmas {
-  transform: rotate(-20deg);
-}
-
-.merry-christmas svg {
-  width: 350px;
-  height: auto;
-
-}
-
 .click-icon {
   position: absolute;
   left: 50%;
@@ -232,7 +212,7 @@
   }
 }
 
-p {
+.six p {
   font-family: 'Mirza', Verdana, Arial, serif;
   font-size: 36px;
   line-height: 1.2em;
@@ -263,3 +243,118 @@ p {
     cursor: pointer;
 }
 
+/* gift */
+.giftcontainer{
+  position: absolute;
+  bottom: 15vh;
+}
+.giftcontainer::before{
+  content: '';
+  position: absolute;
+  width: 170px;
+  height: 20px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 50%;
+  top: 90px;
+  left: -10px;
+}
+.gift{
+  position: relative;
+  width: 150px;
+  height: 100px;
+  background-color: #e9c46a;
+  z-index: 1;
+}
+.gift::before{
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 100px;
+  background-color: #e76f51;
+  left: 62px;
+}
+.gift::after{
+  content: '';
+  position: absolute;
+  box-shadow: inset 0 10px rgba(0,0,0,0.3);
+  width: 150px;
+  height: 100px;
+}
+#click{
+   display: none;
+}
+.click{
+  position: absolute;
+  background-color: #e9c46a;
+  width: 170px;
+  height: 40px;
+  top: -40px;
+  left: -10px;
+  transform-origin: bottom left;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.click::before{
+  position: absolute;
+  content: '';
+  width: 25px;
+  height: 40px;
+  background-color: #e76f51;
+  left: 72px;
+}
+.click::after{
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 0px;
+  border-bottom: 30px solid #e76f51;
+  border-top: 30px solid #e76f51;
+  border-left: 0px solid transparent;
+  border-right: 30px solid transparent;
+  transform: rotate(-90deg);
+  left: 65px;
+  top: -47px;
+}
+#click:checked+.click{
+  transform: rotate(-110deg) scale(0.85);
+}
+#click:checked~.wishes{
+  transform: translateY(-320px);
+  opacity: 1;
+}
+
+.wishes{
+  position: absolute;
+  transition: .5s;
+  color: #333;
+  font-size: 30px;
+  text-transform: capitalize;
+  text-align: center;
+  z-index: -1;
+  top: -200px;
+  left: -100px;
+  color: #fff;
+  opacity: 0;
+}
+.wishes.wishes1{
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+}
+.wishes a{
+  position: absolute;
+  top: -55px;
+  padding: 10px 20px;
+  background-color: lightblue;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.openGift{
+  display: none;
+}
